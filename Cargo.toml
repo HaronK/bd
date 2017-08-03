@@ -1,0 +1,19 @@
+[package]
+name = "binary_digger"
+version = "0.0.1"
+authors = ["Oleg Khryptul <okreptul@yahoo.com>"]
+repository = "https://github.com/HaronK/binary_digger.git"
+homepage = "https://github.com/HaronK/binary_digger"
+license = "Apache-2.0"
+readme = "README.md"
+documentation = "https://github.com/HaronK/binary_digger"
+description = "Tool for investigating binary data format."
+
+[dependencies]
+clippy = {version = "*", optional = true}
+error-chain = "*"
+adapter = {git = "https://github.com/HaronK/adapter.git"}
+
+[features]
+default = []
+dev = ["clippy"]
