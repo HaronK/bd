@@ -26,6 +26,7 @@
   * [ ] Add [rust-skeptic](https://github.com/brson/rust-skeptic) support
   * [ ] Travis support
   * [ ] AppVeyor support
+  * [ ] Update documentation and README.md
 
 * [ ] Version 0.4.0: Dynamic templates
   * [ ] Data template declaration (based on macros).
