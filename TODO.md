@@ -2,8 +2,8 @@
 
 ## Fixes
 
-* [ ] Rename the repository to **bd**.
-* [ ] Reorganize folders.
+* [x] Rename the repository to **bd**.
+* [x] Reorganize folders.
 * [ ] Change DataSource trait to Read+Seek traits combination?
 
 ## Releases and features
@@ -33,10 +33,10 @@
   * [ ] Containers - sized block of data that can be initialized/parsed by other template.
 
 * [ ] Version 0.5.0: CLI
- *  [ ] Command line interface (separate repository: **bd_cli**).
+  * [ ] Command line interface (separate repository: **bd_cli**).
 
 * [ ] Version 0.6.0
- *  [ ] Lua templates.
+  * [ ] Lua templates.
 
 * [ ] Version 0.7.0: GUI (Qt - C++)
   * [ ] GUI (separate repository: **bd_qt**): reuse existing Qt implementation from the C++ code. Generate FFI interface to access it from the C++ side.
