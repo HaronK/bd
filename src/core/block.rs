@@ -4,19 +4,7 @@ use core::array_size::*;
 use core::item_link::*;
 use core::item_size::*;
 use core::SizeType;
-use core::data_slice::*;
-use core::block_address::BlockAddress;
-
-use types::block_attributes::*;
-
-/// Block common data structure
-pub struct BlockData {
-    pub slice: DataSliceLink,
-    pub offset: BlockAddress,
-    pub size: SizeType,
-    pub attrs: BlockAttributes,
-    pub parent: Option<BlockLink>,
-}
+use core::block_data::*;
 
 /// Type alias for block link.
 pub type BlockLink = ItemLink<Block>;
@@ -34,7 +22,7 @@ pub trait Block {
     /// Get number of items in the array.
     fn get_array_size(&self) -> ArraySize;
     /// Get parent.
-    fn get_parent(&self) -> &Option<BlockLink>;
+    fn get_parent(&self) -> Option<BlockLink>;
     /// Get children count.
     fn len(&self) -> ArraySize;
     /// Get child by index.

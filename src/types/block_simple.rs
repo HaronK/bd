@@ -6,6 +6,7 @@ use std::mem;
 use core::errors::*;
 use core::block_address::BlockAddress;
 use core::array_size::ArraySize;
+use core::block_data::*;
 use core::block::*;
 use core::SizeType;
 use core::data_slice::*;
@@ -23,15 +24,15 @@ pub struct BlockSimple<T: Sized> {
 
 impl<T: Sized> Block for BlockSimple<T> {
     fn get_offset(&self) -> SizeType {
-        self.data.offset.get()
+        self.data.get_offset()
     }
 
     fn get_size(&self) -> SizeType {
-        self.data.size
+        self.data.get_size()
     }
 
-    fn get_parent(&self) -> &Option<BlockLink> {
-        &self.data.parent
+    fn get_parent(&self) -> Option<BlockLink> {
+        self.data.get_parent()
     }
 
     fn is_array(&self) -> bool {
@@ -63,13 +64,13 @@ impl<T: Default + Sized + 'static> BlockSimple<T> {
         attrs: BlockAttributes,
     ) -> BlockLink {
         let block = BlockSimple::<T> {
-            data: BlockData {
-                slice: slice,
-                offset: BlockAddress::Automatic(1),
-                size: mem::size_of::<T>(),
-                attrs: attrs,
-                parent: parent,
-            },
+            data: BlockData::new(
+                slice,
+                BlockAddress::Automatic(1),
+                mem::size_of::<T>(),
+                attrs,
+                parent
+            ),
             array_size: ArraySize::NotArray,
             value: Default::default(), // TODO: read value from the slice
         };
@@ -84,13 +85,13 @@ impl<T: Default + Sized + 'static> BlockSimple<T> {
         attrs: BlockAttributes,
     ) -> BlockLink {
         let block = BlockSimple::<T> {
-            data: BlockData {
-                slice: slice,
-                offset: BlockAddress::Automatic(1),
-                size: mem::size_of::<T>() * size,
-                attrs: attrs,
-                parent: parent,
-            },
+            data: BlockData::new(
+                slice,
+                BlockAddress::Automatic(1),
+                mem::size_of::<T>() * size,
+                attrs,
+                parent
+            ),
             array_size: ArraySize::Size(size),
             value: Default::default(),
         };

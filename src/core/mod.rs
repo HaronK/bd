@@ -9,6 +9,7 @@ pub mod array_size;
 pub mod data_source;
 pub mod data_slice;
 pub mod block_address;
+pub mod block_data;
 pub mod block;
 pub mod template_size;
 pub mod template;

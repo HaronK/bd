@@ -5,6 +5,7 @@ use std::cell::RefCell;
 use core::errors::*;
 use core::array_size::*;
 use core::block_address::BlockAddress;
+use core::block_data::*;
 use core::block::*;
 use core::SizeType;
 use core::data_slice::*;
@@ -22,15 +23,15 @@ pub struct BlockArray {
 
 impl Block for BlockArray {
     fn get_offset(&self) -> SizeType {
-        self.data.offset.get()
+        self.data.get_offset()
     }
 
     fn get_size(&self) -> SizeType {
-        self.data.size
+        self.data.get_size()
     }
 
-    fn get_parent(&self) -> &Option<BlockLink> {
-        &self.data.parent
+    fn get_parent(&self) -> Option<BlockLink> {
+        self.data.get_parent()
     }
 
     fn is_array(&self) -> bool {
@@ -68,13 +69,13 @@ impl BlockArray {
         attrs: BlockAttributes,
     ) -> BlockLink {
         let block = BlockArray {
-            data: BlockData {
-                slice: slice,
-                offset: BlockAddress::Automatic(1),
-                size: 1,
-                attrs: attrs,
-                parent: parent,
-            },
+            data: BlockData::new(
+                slice,
+                BlockAddress::Automatic(1),
+                1,
+                attrs,
+                parent
+            ),
             item_size: item_size,
             children: Self::make_empty_vec(array_size),
         };
@@ -90,13 +91,13 @@ impl BlockArray {
         attrs: BlockAttributes,
     ) -> BlockLink {
         let block = BlockArray {
-            data: BlockData {
-                slice: slice,
-                offset: BlockAddress::Automatic(1),
-                size: 1,
-                attrs: attrs,
-                parent: parent,
-            },
+            data: BlockData::new(
+                slice,
+                BlockAddress::Automatic(1),
+                1,
+                attrs,
+                parent
+            ),
             item_size: item_size,
             children: Self::make_empty_vec(array_size),
         };

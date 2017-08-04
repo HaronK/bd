@@ -1,5 +1,4 @@
 
-use core::errors::*;
 use core::SizeType;
 
 /// Item size
@@ -15,11 +14,11 @@ pub enum ItemSize {
 
 impl ItemSize {
     /// Get item size
-    pub fn get(&self) -> Result<SizeType> {
+    pub fn get(&self) -> Option<SizeType> {
         match *self {
-            ItemSize::Static(size) => Ok(size),
-            ItemSize::Dynamic(size) => Ok(size),
-            ItemSize::Unknown => bail!("Size of the item is not calculated yet"),
+            ItemSize::Static(size) => Some(size),
+            ItemSize::Dynamic(size) => Some(size),
+            ItemSize::Unknown => None,
         }
     }
 

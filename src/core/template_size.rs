@@ -15,11 +15,11 @@ pub enum TemplateSize {
 
 impl TemplateSize {
     /// Get template size
-    pub fn get(&self) -> SizeType {
+    pub fn get(&self) -> Option<SizeType> {
         match *self {
-            TemplateSize::Automatic(size) => size,
-            TemplateSize::Manual(size) => size,
-            TemplateSize::Dynamic => 0,
+            TemplateSize::Automatic(size) => Some(size),
+            TemplateSize::Manual(size) => Some(size),
+            TemplateSize::Dynamic => None,
         }
     }
 

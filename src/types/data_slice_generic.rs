@@ -6,23 +6,22 @@ use core::SizeType;
 
 pub struct DataSliceGeneric {
     source: DataSourceLink,
-    addr: SizeType,
+    offset: SizeType,
     size: SizeType,
 }
 
 impl DataSliceGeneric {
     pub fn new(source: DataSourceLink, size: SizeType) -> Self {
-        let addr = source.as_ref().get_position();
-
-        DataSliceGeneric {
-            source: source,
-            addr: addr,
-            size: size,
-        }
+        let offset = source.as_ref().get_position();
+        DataSliceGeneric { source, offset, size }
     }
 }
 
 impl DataSlice for DataSliceGeneric {
+    fn get_offset(&self) -> SizeType {
+        self.offset
+    }
+
     fn get_size(&self) -> SizeType {
         self.size
     }
@@ -31,6 +30,6 @@ impl DataSlice for DataSliceGeneric {
         if pos + (buf.len() as SizeType) >= self.size {
             bail!("Slice is out of bounds");
         }
-        self.source.as_mut().get_data(self.addr + pos, buf)
+        self.source.as_mut().get_data(self.offset + pos, buf)
     }
 }
