@@ -36,10 +36,10 @@ impl Template for TemplateGeneric {
         slice: DataSliceLink,
         attrs: BlockAttributes,
     ) -> PartialResult<BlockLink> {
-        let item_size = if self.size.is_dynamic() {
-            ItemSize::Dynamic
-        } else {
-            ItemSize::Static(self.size.get())
+        let item_size = match self.size {
+            TemplateSize::Automatic(size) => ItemSize::Dynamic(size),
+            TemplateSize::Manual(size) => ItemSize::Static(size),
+            TemplateSize::Dynamic => ItemSize::Unknown,
         };
         Ok(BlockGeneric::new(parent, item_size, slice, attrs))
     }
