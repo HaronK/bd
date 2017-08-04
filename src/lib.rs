@@ -25,5 +25,4 @@ extern crate error_chain;
 
 pub mod core;
 pub mod types;
-
-mod blocks;
+pub mod blocks;
