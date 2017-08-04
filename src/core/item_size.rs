@@ -46,3 +46,35 @@ impl ItemSize {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn is_static() {
+        let value = ItemSize::Static(10);
+        assert!(value.is_static());
+        assert!(!value.is_dynamic());
+        assert!(!value.is_unknown());
+        assert_eq!(10, value.get().unwrap());
+    }
+
+    #[test]
+    fn is_dynamic() {
+        let value = ItemSize::Dynamic(20);
+        assert!(value.is_dynamic());
+        assert!(!value.is_static());
+        assert!(!value.is_unknown());
+        assert_eq!(20, value.get().unwrap());
+    }
+
+    #[test]
+    fn is_unknown() {
+        let value = ItemSize::Unknown;
+        assert!(value.is_unknown());
+        assert!(!value.is_static());
+        assert!(!value.is_dynamic());
+        assert!(if let Some(_) = value.get() {false} else {true});
+    }
+}

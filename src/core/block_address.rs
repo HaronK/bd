@@ -35,3 +35,24 @@ impl BlockAddress {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn is_automatic() {
+        let value = BlockAddress::Automatic(10);
+        assert!(value.is_automatic());
+        assert!(!value.is_manual());
+        assert_eq!(10, value.get());
+    }
+
+    #[test]
+    fn is_manual() {
+        let value = BlockAddress::Manual(20);
+        assert!(value.is_manual());
+        assert!(!value.is_automatic());
+        assert_eq!(20, value.get());
+    }
+}

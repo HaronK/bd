@@ -27,3 +27,22 @@ impl ArraySize {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn is_array() {
+        let value = ArraySize::Size(10);
+        assert!(value.is_array());
+        assert_eq!(10, value.get().unwrap());
+    }
+
+    #[test]
+    fn is_not_array() {
+        let value = ArraySize::NotArray;
+        assert!(!value.is_array());
+        assert!(if let Some(_) = value.get() {false} else {true});
+    }
+}

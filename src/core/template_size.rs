@@ -55,3 +55,38 @@ impl TemplateSize {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn is_automatic() {
+        let value = TemplateSize::Automatic(10);
+        assert!(value.is_fixed());
+        assert!(value.is_automatic());
+        assert!(!value.is_manual());
+        assert!(!value.is_dynamic());
+        assert_eq!(10, value.get().unwrap());
+    }
+
+    #[test]
+    fn is_manual() {
+        let value = TemplateSize::Manual(20);
+        assert!(value.is_fixed());
+        assert!(value.is_manual());
+        assert!(!value.is_automatic());
+        assert!(!value.is_dynamic());
+        assert_eq!(20, value.get().unwrap());
+    }
+
+    #[test]
+    fn is_dynamic() {
+        let value = TemplateSize::Dynamic;
+        assert!(value.is_dynamic());
+        assert!(!value.is_fixed());
+        assert!(!value.is_automatic());
+        assert!(!value.is_manual());
+        assert!(if let Some(_) = value.get() {false} else {true});
+    }
+}
