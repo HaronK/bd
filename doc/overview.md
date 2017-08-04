@@ -42,7 +42,7 @@ Template contains an instructions how to build blocks hierarchy.
 * Struct - has static structure (fixed number and count of the fields).
 * Simple - basic type: integer, double, etc.
 * Custom - templates that require specific treatment, i.e. c-strings.
-* Container - block of data with a fixed size that can be initialized/parsed with other template.
+* Container - block of data with a fixed size that can be initialized/parsed with other template(s). Container can be initialized with more than one template. In this case there will be several parallel block trees.
 
 #### Template hierarchy visitors
 

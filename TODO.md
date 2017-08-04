@@ -31,7 +31,7 @@
 * [ ] Version 0.4.0: Dynamic templates
   * [ ] Data template declaration (based on macros).
   * [ ] Dynamic templates (compiled into dynamically linked libraries).
-  * [ ] Containers - sized block of data that can be initialized/parsed by other template.
+  * [ ] Containers - sized block of data that can be initialized/parsed by other template(s). Container can be initialized with more than one template. In this case there will be several parallel block trees.
 
 * [ ] Version 0.5.0: CLI
   * [ ] Command line interface (separate repository: **bd_cli**).
