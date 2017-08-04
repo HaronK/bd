@@ -31,7 +31,7 @@ impl<T: Sized> Block for BlockSimple<T> {
         self.data.get_size()
     }
 
-    fn get_parent(&self) -> Option<BlockLink> {
+    fn get_parent(&self) -> Option<&BlockLink> {
         self.data.get_parent()
     }
 

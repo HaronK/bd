@@ -4,7 +4,6 @@ use core::array_size::*;
 use core::item_link::*;
 use core::item_size::*;
 use core::SizeType;
-use core::block_data::*;
 
 /// Type alias for block link.
 pub type BlockLink = ItemLink<Block>;
@@ -22,7 +21,7 @@ pub trait Block {
     /// Get number of items in the array.
     fn get_array_size(&self) -> ArraySize;
     /// Get parent.
-    fn get_parent(&self) -> Option<BlockLink>;
+    fn get_parent(&self) -> Option<&BlockLink>;
     /// Get children count.
     fn len(&self) -> ArraySize;
     /// Get child by index.

@@ -34,9 +34,9 @@ impl BlockData {
     }
 
     /// Get parent.
-    pub fn get_parent(&self) -> Option<BlockLink> {
+    pub fn get_parent(&self) -> Option<&BlockLink> {
         match self.parent {
-            Some(parent) => Some(parent),
+            Some(ref parent) => Some(parent),
             None => None
         }
     }

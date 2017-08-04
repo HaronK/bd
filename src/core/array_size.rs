@@ -1,5 +1,4 @@
 
-use core::errors::*;
 use core::SizeType;
 
 /// Block array size
@@ -13,10 +12,10 @@ pub enum ArraySize {
 
 impl ArraySize {
     /// Get array size
-    pub fn get(&self) -> Result<SizeType> {
+    pub fn get(&self) -> Option<SizeType> {
         match *self {
-            ArraySize::Size(size) => Ok(size),
-            ArraySize::NotArray => bail!("Cannot get an array size of not an array block."),
+            ArraySize::Size(size) => Some(size),
+            ArraySize::NotArray => None,
         }
     }
 

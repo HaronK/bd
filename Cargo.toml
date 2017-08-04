@@ -1,12 +1,12 @@
 [package]
-name = "binary_digger"
+name = "bd"
 version = "0.0.1"
 authors = ["Oleg Khryptul <okreptul@yahoo.com>"]
-repository = "https://github.com/HaronK/binary_digger.git"
-homepage = "https://github.com/HaronK/binary_digger"
+repository = "https://github.com/HaronK/bd.git"
+homepage = "https://github.com/HaronK/bd"
 license = "Apache-2.0"
 readme = "README.md"
-documentation = "https://github.com/HaronK/binary_digger"
+documentation = "https://github.com/HaronK/bd"
 description = "Tool for investigating binary data format."
 
 [dependencies]
