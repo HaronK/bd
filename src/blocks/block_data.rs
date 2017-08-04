@@ -1,9 +1,9 @@
 
-use core::block_address::BlockAddress;
+use types::block_address::BlockAddress;
+use types::SizeType;
+use types::block_attributes::*;
 use core::data_slice::*;
 use core::block::*;
-use core::SizeType;
-use types::block_attributes::*;
 
 /// Block common data structure
 pub struct BlockData {

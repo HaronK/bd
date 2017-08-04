@@ -1,5 +1,5 @@
 
-use core::SizeType;
+use types::SizeType;
 
 /// Represents template size. Can be Automatic, Manual and Dynamic.
 #[derive(Debug, Copy, Clone)]

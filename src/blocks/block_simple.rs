@@ -3,23 +3,22 @@ use std::rc::Rc;
 use std::cell::RefCell;
 use std::mem;
 
-use core::errors::*;
-use core::block_address::BlockAddress;
-use core::array_size::ArraySize;
-use core::block_data::*;
-use core::block::*;
-use core::SizeType;
-use core::data_slice::*;
-use core::item_link::*;
-use core::item_size::*;
-
+use types::errors::*;
+use types::block_address::BlockAddress;
+use types::array_size::ArraySize;
+use types::SizeType;
+use types::item_link::*;
+use types::item_size::*;
 use types::block_attributes::*;
+use core::block::*;
+use core::data_slice::*;
+use blocks::block_data::*;
 
 /// Simple block structure
 pub struct BlockSimple<T: Sized> {
-    pub data: BlockData,
-    pub array_size: ArraySize,
-    pub value: T,
+    data: BlockData,
+    array_size: ArraySize,
+    value: T,
 }
 
 impl<T: Sized> Block for BlockSimple<T> {

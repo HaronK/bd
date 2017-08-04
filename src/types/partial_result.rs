@@ -1,5 +1,5 @@
 
-use core::errors;
+use types::errors;
 
 pub struct Error<T>(Option<T>, errors::Error);
 

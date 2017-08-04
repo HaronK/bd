@@ -1,5 +1,5 @@
 
-use core::SizeType;
+use types::SizeType;
 
 /// Item size
 #[derive(Debug, Copy, Clone)]

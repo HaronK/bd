@@ -1,14 +1,13 @@
 
-use core::block::*;
-use core::item_size::*;
-use core::template::*;
-use core::template_size::*;
-use core::data_slice::*;
-use core::partial_result::*;
-
+use types::item_size::*;
+use types::template_size::*;
+use types::partial_result::*;
 use types::block_attributes::*;
 use types::template_attributes::*;
-use types::block_generic::*;
+use core::block::*;
+use core::template::*;
+use core::data_slice::*;
+use blocks::block_generic::*;
 
 /// Block template internal data
 pub struct TemplateGeneric {

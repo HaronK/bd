@@ -1,7 +1,7 @@
 
-use core::SizeType;
-use core::errors::*;
-use core::item_link::*;
+use types::errors::*;
+use types::item_link::*;
+use types::SizeType;
 
 /// Type alias for data source link.
 pub type DataSourceLink = ItemLink<DataSource>;

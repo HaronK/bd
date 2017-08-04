@@ -2,17 +2,16 @@
 use std::rc::Rc;
 use std::cell::RefCell;
 
-use core::errors::*;
-use core::array_size::*;
-use core::block_address::BlockAddress;
-use core::block_data::*;
-use core::block::*;
-use core::SizeType;
-use core::data_slice::*;
-use core::item_link::*;
-use core::item_size::*;
-
+use types::errors::*;
+use types::array_size::*;
+use types::block_address::BlockAddress;
+use types::SizeType;
+use types::item_link::*;
+use types::item_size::*;
 use types::block_attributes::*;
+use core::block::*;
+use core::data_slice::*;
+use blocks::block_data::*;
 
 /// Array block structure
 pub struct BlockArray {

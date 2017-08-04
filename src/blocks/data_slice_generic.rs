@@ -1,8 +1,8 @@
 
-use core::errors::*;
+use types::errors::*;
+use types::SizeType;
 use core::data_source::*;
 use core::data_slice::*;
-use core::SizeType;
 
 pub struct DataSliceGeneric {
     source: DataSourceLink,

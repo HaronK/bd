@@ -1,5 +1,5 @@
 
-use core::SizeType;
+use types::SizeType;
 
 /// Block array size
 #[derive(Debug, Copy, Clone)]

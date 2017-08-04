@@ -3,9 +3,9 @@ use std::io::{Seek, SeekFrom, Read};
 use std::fs::File;
 use std::path::Path;
 
-use core::errors::*;
+use types::errors::*;
+use types::SizeType;
 use core::data_source::*;
-use core::SizeType;
 
 pub struct DataSourceFile {
     file: File,

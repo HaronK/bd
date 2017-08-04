@@ -1,5 +1,5 @@
 
-use core::SizeType;
+use types::SizeType;
 
 /// Attributes of the template
 pub struct TemplateAttributes {

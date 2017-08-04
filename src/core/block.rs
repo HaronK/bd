@@ -1,9 +1,9 @@
 
-use core::errors::*;
-use core::array_size::*;
-use core::item_link::*;
-use core::item_size::*;
-use core::SizeType;
+use types::errors::*;
+use types::array_size::*;
+use types::item_link::*;
+use types::item_size::*;
+use types::SizeType;
 
 /// Type alias for block link.
 pub type BlockLink = ItemLink<Block>;

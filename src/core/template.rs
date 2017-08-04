@@ -1,12 +1,11 @@
 
-use core::template_size::TemplateSize;
-use core::block::*;
-use core::partial_result::*;
-use core::item_link::*;
-use core::data_slice::*;
-
+use types::template_size::TemplateSize;
+use types::partial_result::*;
+use types::item_link::*;
 use types::block_attributes::*;
 use types::template_attributes::*;
+use core::data_slice::*;
+use core::block::*;
 
 /// Type alias for block template link.
 pub type TemplateLink = ItemLink<Template>;

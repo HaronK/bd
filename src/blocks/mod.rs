@@ -1,9 +1,9 @@
 
-pub mod block_array;
-pub mod block_generic;
-pub mod block_simple;
-pub mod template_generic;
-pub mod data_source_file;
-pub mod data_slice_generic;
-pub mod block_attributes;
-pub mod template_attributes;
+mod block_array;
+mod block_generic;
+mod block_simple;
+mod template_generic;
+mod data_source_file;
+mod data_slice_generic;
+
+mod block_data;

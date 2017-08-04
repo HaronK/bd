@@ -1,5 +1,5 @@
 
-use core::SizeType;
+use types::SizeType;
 
 /// Block address
 #[derive(Debug, Copy, Clone)]
