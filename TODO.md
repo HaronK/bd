@@ -5,7 +5,7 @@
 * [x] Rename the repository to **bd**.
 * [x] Reorganize folders.
 * [ ] Change DataSource trait to Read+Seek traits combination?
-* [ ] Failure
+* [ ] [Failure](https://github.com/withoutboats/failure)
 * [ ] Check for no unsafe code (#![forbid(unsafe_code)])
 * [ ] #![no_std] ?
 
