@@ -41,6 +41,7 @@
 
 * [ ] Version 0.6.0
   * [ ] Lua templates.
+  * [ ] LuaJit support?
 
 * [ ] Version 0.7.0: GUI (Qt - C++)
   * [ ] GUI (separate repository: **bd_qt**): reuse existing Qt implementation from the C++ code. Generate FFI interface to access it from the C++ side.
