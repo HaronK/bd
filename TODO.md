@@ -6,7 +6,7 @@
 * [x] Reorganize folders.
 * [ ] Change DataSource trait to Read+Seek traits combination?
 * [ ] Failure
-* [ ] Check for no unsafe code
+* [ ] Check for no unsafe code (#![forbid(unsafe_code)])
 * [ ] #![no_std] ?
 
 ## Releases and features
