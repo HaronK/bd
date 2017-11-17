@@ -5,6 +5,9 @@
 * [x] Rename the repository to **bd**.
 * [x] Reorganize folders.
 * [ ] Change DataSource trait to Read+Seek traits combination?
+* [ ] Failure
+* [ ] Check for no unsafe code
+* [ ] #![no_std] ?
 
 ## Releases and features
 
