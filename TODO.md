@@ -5,9 +5,10 @@
 * [x] Rename the repository to **bd**.
 * [x] Reorganize folders.
 * [ ] Change DataSource trait to Read+Seek traits combination?
-* [ ] [Failure](https://github.com/withoutboats/failure)
+* [ ] [Failure](https://github.com/withoutboats/failure) instead of block-chain
 * [ ] Check for no unsafe code (#![forbid(unsafe_code)])
 * [ ] #![no_std] ?
+* [ ] WebAssembly/wasm32 support ?
 
 ## Releases and features
 
