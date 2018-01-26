@@ -9,6 +9,7 @@
 * [ ] Check for no unsafe code (#![forbid(unsafe_code)])
 * [ ] #![no_std] ?
 * [ ] WebAssembly/wasm32 support ?
+* [ ] Return slices (&[u8]) pointing to the original data instead of copying this information in data slice/source traits
 
 ## Releases and features
 
